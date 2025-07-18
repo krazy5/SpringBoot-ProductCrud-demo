@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Edit Product</title>
+</head>
+<body>
+<h2>Edit Product</h2>
+<form th:action="@{/products/update}" method="post" enctype="multipart/form-data">
+  <!-- ID must be hidden -->
+  <input type="hidden" name="id" th:value="${product.id}" />
+
+  <label>Name:</label>
+  <input type="text" name="name" th:value="${product.name}" required/><br/>
+
+  <label>Description:</label>
+  <textarea name="description" th:text="${product.description}"></textarea><br/>
+
+  <label>Price:</label>
+  <input type="number" name="price" step="0.01" th:value="${product.price}" required/><br/>
+
+  <label>Current Photo:</label><br/>
+  <img th:src="@{'/uploads/' + ${product.photo}}" width="150"/><br/><br/>
+
+  <label>New Photo (optional):</label>
+  <input type="file" name="photoFile" accept="image/*"/><br/>
+
+  <input type="hidden" name="oldPhoto" th:value="${product.photo}" />
+
+  <button type="submit">Update</button>
+</form>
+
+<br/>
+<a th:href="@{/products}">Back to List</a>
+</body>
+</html>
