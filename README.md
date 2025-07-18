@@ -40,7 +40,7 @@ A simple \*\*Spring Boot\*\* web application for managing products — includes 
 
 \### 🏠 Product List Page
 
-!\[Product List](https://github.com/krazy5/SpringBoot-ProductCrud-demo/blob/main/screenshots/add.png)
+!\[Product List](screenshots/add.png)
 
 
 
